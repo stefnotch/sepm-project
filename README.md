@@ -7,6 +7,9 @@ The backend is not included, instead we whipped up a *mocked* version of it. Try
 
 ![Screenshot](./screenshot.png)
 
+
+[**There is also the code of our spicy little code generator**](https://github.com/stefnotch/sepm-project/tree/main/backend/codegenerator#code-generator).
+
 # Internal Info
 
 ## How to run it
