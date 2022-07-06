@@ -61,8 +61,6 @@ async function addToCache(request: Request, response: Response) {
 }
 
 function respondFromCache(request: Request): Response | null {
-  if (!useCache) return null;
-
   const requestIdentifier = getRequestIdentifier(request);
   const cachedResponse = kyCache.get(requestIdentifier);
   if (cachedResponse) {
@@ -102,9 +100,18 @@ export function useService(basePath: string) {
             request.headers.set('Authorization', 'Bearer ' + authStore.token);
           }
 
-          const cachedResponse = respondFromCache(request);
-          if (cachedResponse) {
-            return cachedResponse;
+          if (useCache) {
+            const cachedResponse = respondFromCache(request);
+            if (cachedResponse) {
+              return cachedResponse;
+            } else {
+              const headers = new Headers();
+              headers.set('content-type', 'application/json');
+              return new Response('Unsupported.', {
+                status: 404,
+                headers: headers,
+              });
+            }
           }
         },
       ],
