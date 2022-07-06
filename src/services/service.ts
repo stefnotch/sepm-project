@@ -24,7 +24,7 @@ copy(stringified);
 
 async function tryLoadKyCache() {
   try {
-    const kyCacheFile = await fetch('/ky-cache.txt');
+    const kyCacheFile = await fetch(new URL('./ky-cache.txt', import.meta.url).href);
     const content = await kyCacheFile.text();
     if (!content) return;
     const parsedContent = JSON.parse(content);
