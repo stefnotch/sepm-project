@@ -66,8 +66,6 @@ function respondFromCache(request: Request): Response | null {
   const requestIdentifier = getRequestIdentifier(request);
   const cachedResponse = kyCache.get(requestIdentifier);
   if (cachedResponse) {
-    console.log(requestIdentifier, 'was cached');
-
     const headers = new Headers();
     if (cachedResponse.contentType) {
       headers.set('content-type', cachedResponse.contentType);
@@ -88,7 +86,7 @@ export function findBackendUrl(basePath: string) {
     return new URL(basePath, 'http://localhost:8080');
   } else {
     // assume deployed somewhere and backend is available at same host/port as frontend
-    return new URL(basePath, window.location.protocol + '//' + window.location.host);
+    return new URL(basePath, import.meta.url);
   }
 }
 
