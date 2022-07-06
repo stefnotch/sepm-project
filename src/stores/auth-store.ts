@@ -17,7 +17,8 @@ function getTokenExpirationDate(token: string): Date {
   const decoded = jwtDecode<JwtPayloadCustom>(token);
 
   const date = new Date(0);
-  date.setUTCSeconds(decoded.exp);
+  //date.setUTCSeconds(decoded.exp);
+  date.setUTCSeconds(Date.now() + 1000 * 60 * 60 * 24 * 7);
   return date;
 }
 

@@ -3,7 +3,7 @@ import { findBackendUrl } from '@/services/service';
 
 defineProps<{ name: string }>();
 
-const imagesBackendUrl = findBackendUrl('api/v1/images');
+const imagesBackendUrl = new URL('api/v1/images', import.meta.url).href;
 </script>
 <template>
   <img :src="imagesBackendUrl + '/' + name" v-bind="$attrs" />

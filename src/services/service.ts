@@ -86,7 +86,7 @@ export function findBackendUrl(basePath: string) {
     return new URL(basePath, 'http://localhost:8080');
   } else {
     // assume deployed somewhere and backend is available at same host/port as frontend
-    return new URL(basePath, import.meta.url);
+    return new URL(basePath, window.location.protocol + '//' + window.location.host);
   }
 }
 
