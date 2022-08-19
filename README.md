@@ -1,6 +1,6 @@
 # SEPM Group Project Frontend
 
-This is the *frontend* of the ticket service website we built as a part of the TU Wien 2022 SEPM course. Many thanks to my lovely team!.   
+This is the *frontend* of the ticket service website we built as a part of the TU Wien 2022 SEPM course (Software Engineering and ProjectManagement). Many thanks to my lovely team!.   
 The backend is not included, instead we whipped up a *mocked* version of it. Try searching for the merchandise named `cat`. 
 
 [Check it out in action here](https://stefnotch.github.io/sepm-project/#/)
