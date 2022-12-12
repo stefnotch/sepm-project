@@ -21,6 +21,7 @@ The backend is not included, instead we whipped up a *mocked* version of it. Try
 - [Stefnotch](https://github.com/stefnotch)
 - [Syntactic Sugardaddy](https://github.com/Syntactic-Sugardaddy)
 - [peanutrino](https://github.com/peanutrino)
+- [Yousif](https://github.com/YouSafe)
 - Berndt
 - Berik
 
